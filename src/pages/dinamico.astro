@@ -1,4 +1,6 @@
 ---
+export const prerender = true;
+
 const text = await fetch("https://randomuser.me/api/?nat=ES&inc=gender,name,nat").then((res) => res.json())
 
 const pageTitle = text.results[0].name.first + ' ' + text.results[0].name.last;
@@ -16,6 +18,5 @@ console.log(text.results[0].name.first + ' ' + text.results[0].name.last);
 	</head>
 	<body>
 		<h1>{pageTitle}</h1>
-		{Astro.url}
 	</body>
 </html>
